@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baker news | Your Feed</title>
+    <link rel="icon" href="./Icons/b-solid.svg">
+    <link rel="stylesheet" href="yourFeed.css">
+</head>
+<body>
+    <header class="desktop-head">
+        <div class="logo">baker news.</div>
+        <div class="nav">
+            <ul>
+                <li><a href="./home/latest.html">Home</a></li>
+                <li class="active"><a href="./yourFeed.html">Your Feed  <img src="./Icons/star-solid.svg" alt=""></a></li>
+            </ul>
+        </div>
+        <button class="user-menu" id="user-menu-btn"><img src="./Icons/circle-user-solid.svg" alt="user-menu"></button>
+    </header>
+
+    <header class="mobile-head">
+        <div class="logo">baker news.</div>
+        <div class="nav">
+            <button class="ham-menu" id="menu-button"><img src="./Icons/bars-solid.svg" alt="ham-menu"></button>
+            <ul>
+                <li><a href="./home/latest.html">Home</a></li>
+                <li class="active"><a href="./yourFeed.html">Your Feed  <img src="./Icons/star-solid.svg" alt=""></a></li>
+            </ul>
+            <buttton class="user-menu" id="user-menu-btn-mobile"><img src="./Icons/circle-user-solid.svg" alt="user-menu"></buttton>
+            
+        </div>
+    </header>
+
+    <div class="news-wrapper">
+        
+        <div class="message">
+            <h2>Oops! Appears You're Not a Member.</h2>
+            <p>Click on "Account Info" to become a Premium Searcher and get access to news feed tailored to you!</p>
+        </div>
+    </div>
+
+
+    <div id="account-info">
+        <div class="btndiv">
+            <button id="close-account-info"><img src="./Icons/xmark-solid.svg" alt="close"></button>
+        </div>
+        <div class="account-card">
+            <img src="./Icons/user-solid.svg" alt="user-icon">
+            <h3>User N. Example</h3>
+            <div class="email">username@example.com</div>
+            <div class="account-status">Account Status: <span>Searcher (Free)</span></div>
+            <a href="./subscriptions.html" class="btn">Become a Premium Reader <img src="./Icons/star-solid-white.svg" alt="star"></a>
+        </div>
+    </div>
+
+    <script>
+        function toggleaccountdown() {
+            var box = document.getElementById('account-info');
+            box.style.top = '0';
+        }
+        document.getElementById('user-menu-btn').addEventListener('click', function() {
+            toggleaccountdown();
+        });
+        document.getElementById('user-menu-btn-mobile').addEventListener('click', function() {
+            toggleaccountdown();
+        });
+
+        function toggleaccountup() {
+            var box = document.getElementById('account-info');
+            box.style.top = '-150vh';
+        }
+        document.getElementById('close-account-info').addEventListener('click', function() {
+            toggleaccountup();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baker news | Login</title>
+    <link rel="icon" href="./Icons/b-solid.svg">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">baker news.</div>
+            <div class="log-reg-btn">
+                <button class="nav-btn active" id="login">Login</button>
+                <button class="nav-btn" id="register">Sign Up</button>
+            </div>
+        </header>
+        
+        <div class="form-box">
+
+            <div id="movable">
+                <!-- LOGIN FORM -->
+                <div class="login-form form-innerbox">
+                    <form action="./home/latest.html" id="login-form">
+                        <div class="top">
+                            <span>Don't have an account?</span><a href="#" id="register-link">Sign Up</a>
+                        </div>
+                        <h1>Login</h1>
+
+                        <div class="input-field email">
+                            <input type="email" placeholder="Email">
+                        </div>
+
+                        <div class="input-field password">
+                            <input type="password" placeholder="Password">
+                        </div>
+
+                        <div class="bottom">
+                            <span><input type="checkbox"><label for="checkbox">Remember Me</label></span>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+
+                        <div class="btn">
+                            <button type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SIGN UP FORM -->
+                <div class="signup-form form-innerbox">
+                    <form action="./home/latest.html" id="signup-form">
+                        <div class="top">
+                            <span>Have an account?</span><a href="#" id="login-link">Login</a>
+                        </div>
+                        <h1>Sign Up with us!</h1>
+
+                        <div class="input-field names">
+                            <input type="text" placeholder="First Name" class="first" require>
+                            <input type="text" placeholder="Last Name" class="last" required>
+                        </div>
+
+                        <div class="input-field email">
+                            <input type="email" placeholder="Email">
+                        </div>
+
+                        <div class="input-field phone">
+                            <input type="tel" placeholder="Phone" required>
+                        </div>
+
+                        <div class="input-field password">
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <div class="input-field password">
+                            <input type="password" placeholder="Re-enter Password">
+                        </div>
+
+                        <div class="bottom">
+                            <span><input type="checkbox"><label for="checkbox">Remember Me</label></span><a href="#">Terms & Conditions</a>
+                        </div>
+
+                        <div class="btn">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- Move form js -->
+    <script>
+        // move form sign up function
+        function moveformleft() {
+            var box = document.getElementById('movable');
+            box.style.left = "-100%";
+        }
+        document.getElementById('register').addEventListener('click', function() {
+            moveformleft();
+        });
+        document.getElementById('register-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            moveformleft();
+        });
+        
+        // move form login function
+        function moveformright(){
+            var box = document.getElementById('movable');
+            box.style.left = "0";
+        }
+        document.getElementById('login').addEventListener('click', function() {
+            moveformright();
+        });
+        document.getElementById('login-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            moveformright();
+        });
+    </script>
+
+    <!-- Toggle button js -->
+    <script>
+        function togglebtn(event) {
+            var btn = document.querySelectorAll('.nav-btn');
+            btn.forEach(function(el){
+                el.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        var targetbtn = document.querySelectorAll('.nav-btn');
+        targetbtn.forEach(function(el) {
+            el.addEventListener('click', togglebtn);
+        });
+    </script>
+</body>
+
+</html>

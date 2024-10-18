@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    /* border: 1px solid grey; */
+}
+.wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+header .logo{
+    font-weight: 600;
+    font-size: larger;
+}
+.log-reg-btn{
+    display: flex;
+    gap: 10px;
+}
+.log-reg-btn button{
+    padding: 0 8px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+}
+.log-reg-btn .active{
+    border-bottom: 2px solid #000;
+}
+
+/* Form */
+.form-box{
+    /* border: 1px solid grey; */
+    width: 500px;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+/* form inner */
+#movable{
+    /* border: 1px solid yellow; */
+    width: 200%;
+    height: 100%;
+    display: flex;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .3s ease;
+}
+.form-innerbox{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+form .top{
+    display: flex;
+    justify-content: center;
+    font-size: smaller;
+    gap: 10px;
+    margin: 0 0 10px;
+}
+form h1{
+    text-align: center;
+}
+form .input-field{
+    height: fit-content;
+    margin: 12px 0;
+}
+form .names{
+    display: flex;
+    gap: 20px;
+}
+form .input-field input{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid hsl(0, 0%, 60%);
+    padding: 0 10px;
+}
+form .input-field input:focus{ border-bottom: 2px solid #000;}
+form .bottom{
+    display: flex;
+    justify-content: space-between;
+    font-size: smaller;
+    margin-top: 10px;
+}
+form .bottom span{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+form .btn{
+    margin-top: 20px;
+}
+form button{
+    height: 30px;
+    width: 80px;
+    border: none;
+    color: #fff;
+    background-color: #000;
+    text-transform: uppercase;
+}
+
+/* Adjustments */
+@media only screen and (max-width: 480px) {
+    form .names{
+        flex-direction: column;
+    }
+    .form-box{ height: 530px;}
+    form{width: 80%;}
+    form h1{ margin-bottom: 10px;}
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baker news | Home</title>
+    <link rel="icon" href="./Icons/b-solid.svg">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header class="desktop-head">
+        <div class="logo">baker news.</div>
+        <div class="nav">
+            <ul>
+                <li class="active"><a href="./#">Home</a></li>
+                <li><a href="../yourFeed.html">Your Feed  <img src="./Icons/star-solid.svg" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="user-menu" id="user-menu-btn"><img src="./Icons/circle-user-solid.svg" alt="user-menu"></div>
+    </header>
+
+    <header class="mobile-head">
+        <div class="logo">baker news.</div>
+        <div class="nav">
+            <button class="ham-menu" id="menu-button"><img src="./Icons/bars-solid.svg" alt="ham-menu" class="bars"></button>
+            <ul>
+                <li class="active"><a href="./#">Home</a></li>
+                <li><a href="../yourFeed.html">Your Feed  <img src="./Icons/star-solid.svg" alt=""></a></li>
+            </ul>
+            <buttton class="user-menu" id="user-menu-btn-mobile"><img src="./Icons/circle-user-solid.svg" alt="user-menu"></buttton>
+            
+        </div>
+    </header>
+
+    <div class="body-overall">
+    <div class="news-body" id="news-body">
+        <div class="sidebar">
+            <a class="side-link" href="latest.html">Latest</a>
+            <a class="side-link black-bg" href="sports.html">Sports</a>
+            <a class="side-link" href="energy.html">Energy</a>
+            <a class="side-link" href="international.html">International</a>
+            <a class="side-link" href="business.html">Business</a>
+            <a class="side-link" href="politics.html">Politics</a>
+            <a class="side-link" href="entertainment.html">Entertainment</a>
+        </div>
+        <div class="news-area">
+            <div class="card">
+                <div class="news-img"><img src="./Icons/image-solid.svg" alt="news-image"></div>
+                <div class="headline">
+                    <h2>Demo headline</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>More Notes...</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="news-img"><img src="./Icons/image-solid.svg" alt="news-image"></div>
+                <div class="headline">
+                    <h2>Demo headline</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>More Notes...</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="news-img"><img src="./Icons/image-solid.svg" alt="news-image"></div>
+                <div class="headline">
+                    <h2>Demo headline</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>More Notes...</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="news-img"><img src="./Icons/image-solid.svg" alt="news-image"></div>
+                <div class="headline">
+                    <h2>Demo headline</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>More Notes...</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="news-img"><img src="./Icons/image-solid.svg" alt="news-image"></div>
+                <div class="headline">
+                    <h2>Demo headline</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>More Notes...</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="news-img"><img src="./Icons/image-solid.svg" alt="news-image"></div>
+                <div class="headline">
+                    <h2>Demo headline</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>More Notes...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="account-info">
+        <div class="btndiv">
+            <button id="close-account-info"><img src="./Icons/xmark-solid.svg" alt="close"></button>
+        </div>
+        <div class="account-card">
+            <img src="./Icons/user-solid.svg" alt="user-icon">
+            <h3>User N. Example</h3>
+            <div class="email">username@example.com</div>
+            <div class="account-status">Account Status: <span>Reader (Free)</span></div>
+            <a href="../subscriptions.html" class="btn">Become a Premium Reader <img src="./Icons/star-solid-white.svg" alt="star"></a>
+        </div>
+    </div>
+
+
+    <script>
+        let isMoved = false;
+
+        function togglesidebar() {
+            const newsBody = document.getElementById('news-body');
+
+            if (!isMoved) {
+                newsBody.style.left = '0';
+                isMoved = true;
+            }
+            else {
+                newsBody.style.left = '-170px';
+                isMoved = false;
+            }
+        }
+
+        document.getElementById('menu-button').addEventListener('click', togglesidebar)
+    </script>
+
+    <script>
+        function toggleaccountdown() {
+            var box = document.getElementById('account-info');
+            box.style.top = '0';
+        }
+        document.getElementById('user-menu-btn').addEventListener('click', function() {
+            toggleaccountdown();
+        });
+        document.getElementById('user-menu-btn-mobile').addEventListener('click', function() {
+            toggleaccountdown();
+        });
+
+        function toggleaccountup() {
+            var box = document.getElementById('account-info');
+            box.style.top = '-150vh';
+        }
+        document.getElementById('close-account-info').addEventListener('click', function() {
+            toggleaccountup();
+        });
+    </script>
+</body>
+</html>

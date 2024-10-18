@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    /* border: 1px solid grey; */
+}
+
+
+/* Header */
+.desktop-head{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
+}
+.desktop-head .logo{
+    font-size: large;
+    font-weight: 600;
+}
+.desktop-head .nav{ margin-top: 10px;}
+.desktop-head .nav ul{
+    display: flex;
+    gap: 60px;
+}
+
+/* Mobile version */
+.mobile-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* border: 1px solid yellow; */
+    background-color: #fff;
+    z-index: 10;
+    display: none;
+}
+
+.mobile-head .logo{
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    font-weight: 600;
+    margin: 8px 0;
+}
+.mobile-head .nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px;
+}
+.mobile-head button{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.mobile-head .nav ul{
+    display: flex;
+    gap: 60px;
+}
+
+/* Nav-aid */
+.nav ul li{
+    list-style-type: none;
+    padding-bottom: 5px;
+}
+.nav li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    font-size: small;
+}
+.nav ul .active{
+    border-bottom: 2px solid black;
+}
+
+/* news body */
+.body-overall{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+.news-body{
+    margin-top: 60px;
+    display: flex;
+    transition: .3s ease;
+    /* border: 1px solid red; */
+}
+
+/* sidebar */
+.sidebar{
+    width: 170px;
+    height: 100%;
+    /* overflow: auto; */
+    padding: 20px 0;
+    top: 60px;
+    flex-shrink: 0;
+    position: sticky;
+    /* border: 1px solid blue; */
+}
+.sidebar a{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding-left: 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    margin: 10px 0;
+    /* border-radius: 0 40px 40px 0; */
+}
+.sidebar a:hover{
+    background-color: rgba(0, 0, 0, 0.096);
+    color: #000;
+    cursor: pointer;
+}
+.sidebar .black-bg{
+    color: #fff;
+    background-color: black;
+}
+
+/* news area */
+.news-area{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 16px 0;
+}
+/* .news-area *{ border: 1px solid grey;} */
+.news-area .card{
+    width: 60%;
+    height: 380px;
+    position: relative;
+    transition: .2s ease;
+}
+.news-area .card:hover{
+    transform: scale(1.03);
+}
+.card .news-img{
+    height: 90%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card .headline{
+    width: 80%;
+    height: 25%;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    z-index: 1;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+}
+
+#account-info{
+    height: 100vh;
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent;
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: -150vh;
+    transition: .5s ease-in-out;
+    z-index: 15;
+}
+#account-info .btndiv{
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 16px;
+}
+#account-info #close-account-info{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+#account-info .account-card{
+    box-shadow: 0 0 5px 1px;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.account-card .btn{
+    background-color: hsl(0, 0%, 0%);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.account-card .btn:hover{ background-color: hsl(0, 0%, 20%); }
+
+
+
+/* Adjustments */
+@media only screen and (max-width:780px) {
+    .desktop-head{display: none;}
+    .mobile-head{
+        display: block;
+        width: 100vw;
+    }
+
+    .news-body{
+        position: absolute;
+        width: calc(100vw + 170px);
+        left: -170px;
+        top: 30px;
+        transition: .2s ease;
+    }
+    .news-area{
+        width: 100vw;
+    }
+    .news-area .card{width: 80%;}
+    .card .headline{ height: 30%;}
+    #account-info .btndiv{
+        top: 30px;
+    }
+}
