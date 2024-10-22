@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    /* border: 1px solid grey; */
+}
+:root{
+    --black: hsl(0, 0%, 0%);
+    --white: #fff;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 16px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--white);
+    z-index: 5;
+}
+header .homebtn{
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 2px solid grey;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+}
+
+.top{
+    text-align: center;
+    margin-top: 60px;
+    text-decoration: underline;
+}
+.subscriptions{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.sub-card{
+    color: var(--black);
+    height: 400px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 5px 1px;
+    transition: .2s ease;
+    flex-shrink: 0;
+    margin: 20px;
+}
+.sub-card img{
+    width: 30px;
+}
+.sub-card .white-star{display: none;}
+.sub-card h4{
+    font-size: larger;
+}
+.sub-card ul{
+    font-size: smaller;
+    font-weight: 500;
+    padding: 10px;
+}
+.sub-card ul li{
+    list-style-type: none;
+    margin: 8px 0;
+}
+
+.opt-1 ul .one{font-weight: 700;}
+.opt-1 ul .two, .opt-1 ul .three{ text-decoration: line-through; }
+.opt-2 ul .one, .opt-2 ul .two{ font-weight: 700;}
+.opt-2 ul .three{ text-decoration: line-through; }
+.opt-3 ul li{ font-weight: 700; }
+
+.sub-card a{
+    width: 85%;
+    background-color: var(--black);
+    color: var(--white);
+    height: 40px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.sub-card a .price{
+    font-size: 20px;
+}
+.sub-card:hover{
+    transform: scale(1.05);
+    background-color: var(--black);
+    color: var(--white);
+}
+.sub-card:hover a{
+    background-color: var(--white);
+    color: var(--black);
+}
+.sub-card:hover .black-star{ display: none; }
+.sub-card:hover .white-star{ display: inline; }
