@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    /* border: 1px solid grey; */
+}
+:root{
+    --black: hsl(0, 0%, 0%);
+    --white: #fff;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 16px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--white);
+    z-index: 5;
+}
+header .homebtn{
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 2px solid grey;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.top{
+    /* margin-top: 50px; */
+    text-align: center;
+    position: absolute;
+    top: 50px;
+}
+
+/* Payment area */
+/* box 1 */
+.sub-form-box{
+    width: 450px;
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+}
+.sub-form-box button:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+.sub-form-box .movable{
+    height: 100%;
+    width: 300%;
+    display: flex;
+    transition: .3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.movable .box{
+    height: 100%;
+    width: 100%;
+}
+.movable .confirmation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.confirmation .head{
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 16px;
+    gap: 5px;
+}
+.confirmation .details{
+    line-height: 25px;
+    text-align: left;
+}
+.confirmation button{
+    padding: 6px 16px;
+    text-transform: uppercase;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    outline: none;
+    font-weight: 500;
+    transition: .1s ease;
+}
+/* box 2 */
+.movable .card-details, .movable .address{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.card-details form, .address form{
+    width: 80%;
+}
+.card-details .input-field, .address .input-field{
+    height: 40px;
+    width: 100%;
+    margin: 16px 0;
+}
+.card-details .cvv-expiry{
+    display: flex;
+    gap: 10px;
+}
+.card-details input, .address input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid grey;
+    padding: 0 5px;
+}
+.box input:focus{
+    border-bottom: 2px solid black;
+}
+.box .btns{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.btns button{
+    padding: 8px 0;
+    width: 100px;
+    text-transform: uppercase;
+    border: none;
+    color: var(--white);
+    background-color: var(--black);
+}
+
+#success-message{
+    position: fixed;
+    background-color: hsla(0, 0%, 0%, 0.514);
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+#success-message .card{
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+#success-message .card button{
+    padding: 6px 16px;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 780px) {
+    .sub-form-box{
+        width: 90vw;
+    }
+    .top{ top: 80px; }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Reader Subscription</title>
+
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <header>
+        <h2 class=".logo">baker news.</h2>
+        <a href="../subscriptions.html" class="homebtn">Back</a>
+    </header>
+
+    <div class="top">
+        <h5>You're Subscribing for the Premium Reader option.</h5>
+        <h6>You can go back to reselect your subscription</h6>
+    </div>
+
+    <div class="sub-form-box">
+        <div class="movable" id="movable">
+            <div class="box confirmation">
+                <div class="head">
+                    <p class="message">
+                        Confirm the following details are yours and they're active. Otherwise, contact <span>baker news</span> support to rectify your info.
+                    </p>
+                    <a href="#">support@bakernews.com</a>
+                </div>
+                <p class="details">
+                    Name: User N. Example<br>
+                    Email: username@example.com<br>
+                    Phone: 900-2378<br>
+                    Country: Nigeria
+                </p>
+                <button id="next-card">Next</button>
+            </div>
+            <div class="box card-details">
+                <h2>Payment Card Info</h2>
+                <form action="">
+                    <div class="input-field name">
+                        <input type="text" placeholder="Name on Card" required>
+                    </div>
+                    <div class="input-field card-number">
+                        <input type="text" placeholder="Card Number" required>
+                    </div>
+                    <div class="input-field cvv-expiry">
+                        <input type="text" placeholder="CVV" required>
+                        <input type="text" placeholder="Expiry [MM/YY]" required>
+                    </div>
+                </form>
+                <div class="btns">
+                    <button id="previous-confirm">Previous</button>
+                    <button id="finish">Finish</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="success-message">
+        <div class="card">
+            <img src="./circle-check-solid.svg" alt="check">
+            <h3>Congratulations!</h3>
+            <p>
+                Your subscription has been filed in successfully!
+            </p>
+            <button id="close">Okay</button>
+        </div>
+    </div>
+
+    <!-- Move form js -->
+    <script>
+        // move to card details
+        function movetocard() {
+            var box = document.getElementById('movable');
+            box.style.left = "-100%";
+        }
+        document.getElementById('next-card').addEventListener('click', function() {
+            movetocard();
+        });
+
+        // move back to confirm
+        function movetoconfirm() {
+            var box = document.getElementById('movable');
+            box.style.left = "0";
+        }
+        document.getElementById('previous-confirm').addEventListener('click', function() {
+            movetoconfirm();
+        });
+    </script>
+
+
+<!-- Success Message -->
+    <script>
+        function successpopup() {
+            var cover = document.getElementById('success-message');
+            cover.style.display = "flex";
+        }
+        document.getElementById('finish').addEventListener('click', function() {
+            successpopup();
+        });
+
+        function closepopup() {
+            var cover = document.getElementById('success-message');
+            cover.style.display = "none";
+        }
+        document.getElementById('close').addEventListener('click', function(){
+            closepopup();
+        });
+    </script>
+</body>
+</html>
